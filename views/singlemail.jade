@@ -1,0 +1,27 @@
+extends layout
+block content
+    ul
+    each mail in rows.length ? rows : ['Mail bestaat niet']
+        if(mail.email != undefined)
+            div.row
+                div.small-2.large-2.columns
+                    a.th(href="/images/"+ mail.id + ".jpg")
+                        img(src="/images/"+ mail.id + ".jpg")
+                    div.row
+                        div.large-12.columns= mail.name
+                        div.large-12.columns= mail.email
+                div.small-10.large-10.columns
+                    if(mail.bijlage != 0)
+                        div.row
+                            div.alert-box.info.radius Het bericht heeft een bijlage.
+                                a(href="/media/"+mail.mailid+"."+mail.bijlage) Open de bijlage.
+                    div.row
+                        div.large-4.columns
+                            h2(style="display: inline")=mail.subject
+                        div.large-4.columns
+                            a.button(href="/newmail") Beantwoorden
+                    div.row= mail.bericht
+                    div.row
+                        small=mail.createdat + ", van " + mail.email
+        else
+            div.alert-box.warning.radius(data-alert) Deze email bestaat niet!

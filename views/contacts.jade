@@ -1,0 +1,15 @@
+extends layout
+block content
+    ul
+    each mail in rows.length ? rows : ['Geen gegevens bekend van deze afzender']
+        if(mail.email != undefined)
+            div.row
+                div.small-2.large-2.columns
+                    a.th(href="/images/" + mail.id + ".jpg")
+                        img(src="/images/" + mail.id + ".jpg")
+                    div.row
+                        div.large-12.columns= mail.name
+                div.small-10.large-10.columns
+                    div.row= mail.beschrijving
+        else
+            div.alert-box.warning.radius(data-alert) Deze email bestaat niet!

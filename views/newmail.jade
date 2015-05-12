@@ -1,0 +1,19 @@
+extends layout
+block content
+    form(action="" method="post")
+        div.row
+            div.large-12.columns
+                label Aan
+                    input(type="text" placeholder="mail@mail.nl" name="recipient")
+        div.row
+            div.large-12.columns
+                label Onderwerp
+                    input(type="text" placeholder="Onderwerp" name="subject")
+        div.row
+            div.large-12.columns
+                label Bericht
+                    textarea(placeholder="Typ hier je bericht" name="message" rows="15" )
+        div.row
+            div.large-12.columns
+                input(type="submit" class="button" value="Verstuur email")
+

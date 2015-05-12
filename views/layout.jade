@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title= title
+
+    link(rel="stylesheet" href="/foundation/css/foundation.css")
+  body
+      nav.top-bar(data-topbar role="navigation")
+        ul.title-area
+            li.name
+                h1
+                    a(href="/") IJsselMail
+        section.top-bar-section
+            ul.left
+                li
+                    a(href="/Index") Inbox
+                li
+                    a(href="/Contacts") Contacten
+                li.has-form
+                    a.button(href="/newMail") Mail opstellen
+
+    block content
